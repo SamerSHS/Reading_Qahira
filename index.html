@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo&family=El+Messiri:wght@600&family=Readex+Pro:wght@500&family=Space+Mono&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+         }
+
+         html {
+            direction: rtl;
+         }
+
+         body {
+            font-family: 'Cairo', sans-serif;
+            padding: 30px;
+            min-width: 100vw;
+            min-height: 100vh;
+         
+            
+            }
+
+           .container {
+                 display: grid;
+                grid-template-columns: 1fr 1fr;
+                border: 1px solid rgb(63, 117, 0);
+
+            }
+
+         p  {
+            font-size: 21px;
+            font-weight: 400;
+            padding: 10px;
+            margin: auto;
+            /* text-align: center; */
+            /* border: 1px solid #ff1919; */
+            }
+
+         /* span {
+            position: relative;
+         } */
+         span:hover {
+            background-color: rgb(245, 199, 113);
+            }
+
+        .card {
+            background-color: #ffffff;
+            width: 300px;
+            height: 300px; 
+            /* position: absolute; */
+            /* align-items: center;
+            justify-content: center; */
+            /* left: 50%;
+            top: 50%;
+            transform: translateX(-50%) translateY(50%) ; */
+            /* border: 1px solid red; */
+            /* border-radius: 35px; */
+            margin: auto;
+            } 
+
+        img {
+            
+                align-items: center;
+            justify-content: center;
+            transform: translateX(-10%);
+            width:80%;
+            height: 80%;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: cover;
+            overflow: hidden;
+            border-radius: 35px;
+            box-shadow: 1px 1px 5px 1px;
+
+        }
+
+        .card .name {
+            margin: auto;
+            text-align: center;
+            color: blue;
+            font-weight: 700;
+            font-size: 1.2rem;
+            /* border: 1px solid rgb(63, 117, 0); */
+;
+        }
+
+        @media screen and (max-width: 600px) {
+  body {
+    padding: 5px;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    height: 100vh;
+    width: 100vw;
+           
+  }
+    .container {
+                 display: flex;
+                 flex-direction: column;
+                border: none;
+               
+
+            }
+            p  {
+            font-size: 1.2rem;
+            font-weight: 400;
+            padding: 25px;
+            margin-right: 5px;
+            align-items: center;
+            justify-content: center;
+          
+            text-align: center; 
+            }
+
+            .card {
+                align-items: center;
+            justify-content: center;
+                width: 200px;
+            height: 200px; 
+            /* transform: translateX(-10%); */
+
+            }
+  
+}
+            
+    </style>
+</head>
+<body>
+    <h1>اقرأ النص التالي</h1>
+    <div class="container">
+    <p class="mainText">
+        'مدينتي اسمها <span id="diamond">جوهرة</span> <span id="East">الشرق</span>، ويقولون عنها أيضاً مدينة الألف <span id="minaret">مئذنة</span>، فيها أماكن دينية وتاريخية كثيرة، مثل <span id="azhar_mosque">"الجامع الأزهر"</span>، وفيها آثار <span id="pharon">فرعونية</span> قديمة أيضاً مثل <span id="Pyramids">الأهرامات</span>، وتمثال <span id="abu_Hol">"أبو الهول"</span>، كذلك هناك <span id="Castle">قلعة</span> "صلاح الدين الأيوبي" التي تقع على جبل مطل على المدينة. في مدينتي سوق تاريخي مشهور، اسمه "خان الخليلي" وعمره أكثر من 600 سنة، يقع وسط المدينة القديمة، ويزوره كثير من الناس، ويمرّ في هذه المدينة <span id="The_Nile_River">"نهر النيل"</span>. مدينتي اسمها "القاهرة"'
+    </p>
+    <div class="card" ></div>
+    </div>  
+
+    <script>
+
+        let span = document.querySelectorAll('span')
+        let card = document.querySelector('.card')
+
+        span.forEach((e)=> {
+            let original =  e.innerHTML
+            
+            e.addEventListener('mouseover', (()=> {
+                let spanId = e.id
+              card.innerHTML = `<img src='./image/${spanId}.jpg' >
+                                <p class='name'>${spanId}</p>`
+                
+
+       
+            }))
+                
+   
+
+
+                
+            
+        })
+
+    </script>
+</body>
+</html>
